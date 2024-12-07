@@ -1,9 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Exibir Mensagem') {
+        stage('Executar Docker Whoami') {
             steps {
-                echo 'Olá'
+                script {
+                    echo 'Executando o container containous/whoami'
+                    sh '''
+                        docker ps -q --filter "name=iamfoo" | grep -q . && echo "Container já está rodando" || docker run -d -P --name iamfoo containous/whoami
+                    '''
+                }
             }
         }
     }
