@@ -9,7 +9,6 @@ pipeline {
                 }
             }
         }
-
         stage('Verify Deployment') {
             steps {
                 script {
