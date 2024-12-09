@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     echo 'Executando o container containous/whoami'
-                    sh 'docker run -d -P --name iamfoo containous/whoami'
+                    docker { image 'node:22.12.0-alpine3.20' }
                 }
             }
         }
