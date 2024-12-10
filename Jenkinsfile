@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Run Docker Container') {
             steps {
